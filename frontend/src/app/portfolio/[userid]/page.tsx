@@ -20,18 +20,18 @@ const COLORS = ['#4ADE80', '#22D3EE', '#A78BFA', '#FB923C']
 
 export default function PortfolioOverviewPage() {
   return (
-    <div className="min-h-screen bg-[#121212] text-gray-100">
+    <div className="min-h-screen bg-[#121212] text-[#d0d0d0]">
       <main className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold mb-8 text-center text-gray-100">Portfolio Overview</h1>
+        <h1 className="text-4xl font-bold mb-8 text-center text-[#d0d0d0]">Portfolio Overview</h1>
 
         <div className="grid md:grid-cols-2 gap-8 mb-8">
           <Card className="bg-[#1E1E1E] border-none">
             <CardHeader>
-              <CardTitle className="text-gray-100">Total Portfolio Value</CardTitle>
+              <CardTitle className="text-[#d0d0d0]">Total Portfolio Value</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-4xl font-bold mb-2 text-gray-100">$1,234,567.89</p>
-              <p className="text-[#1DB954] flex items-center text-gray-100">
+              <p className="text-4xl font-bold mb-2 text-[#d0d0d0]">$1,234,567.89</p>
+              <p className="text-[#1DB954] flex items-center text-[#d0d0d0]">
                 <ArrowUp className="mr-1 h-4 w-4" />
                 5.67% (+$66,123.45)
               </p>
@@ -40,7 +40,7 @@ export default function PortfolioOverviewPage() {
 
           <Card className="bg-[#1E1E1E] border-none">
             <CardHeader>
-              <CardTitle className="flex items-center text-gray-100">
+              <CardTitle className="flex items-center text-[#d0d0d0]">
                 <PieChart className="mr-2 h-6 w-6 text-[#1DB954]" />
                 Asset Distribution
               </CardTitle>
@@ -74,7 +74,7 @@ export default function PortfolioOverviewPage() {
                   </RechartsChart>
                 </ResponsiveContainer>
               </ChartContainer>
-              <div className="flex justify-center mt-4 text-gray-100">
+              <div className="flex justify-center mt-4 text-[#d0d0d0]">
                 {dummyPortfolioData.map((entry, index) => (
                   <div key={`legend-${index}`} className="flex items-center mr-4">
                     <div className="w-3 h-3 mr-1" style={{ backgroundColor: COLORS[index % COLORS.length] }}></div>
@@ -88,7 +88,7 @@ export default function PortfolioOverviewPage() {
 
         <Card className="bg-[#1E1E1E] border-none mb-8">
           <CardHeader>
-            <CardTitle className="flex items-center text-gray-100">
+            <CardTitle className="flex items-center text-[#d0d0d0]">
               <BarChart className="mr-2 h-6 w-6 text-[#1DB954]" />
               Individual Asset Performance
             </CardTitle>
@@ -97,24 +97,24 @@ export default function PortfolioOverviewPage() {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="text-gray-100">Asset</TableHead>
-                  <TableHead className="text-gray-100">Value</TableHead>
-                  <TableHead className="text-gray-100">Performance</TableHead>
-                  <TableHead className="text-gray-100">Allocation</TableHead>
+                  <TableHead className="text-[#d0d0d0]">Asset</TableHead>
+                  <TableHead className="text-[#d0d0d0]">Value</TableHead>
+                  <TableHead className="text-[#d0d0d0]">Performance</TableHead>
+                  <TableHead className="text-[#d0d0d0]">Allocation</TableHead>
                   <TableHead></TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {['AAPL', 'GOOGL', 'VFIAX', '10-Year Treasury', 'Real Estate Fund'].map((asset) => (
                   <TableRow key={asset}>
-                    <TableCell className="font-medium text-gray-100">{asset}</TableCell>
-                    <TableCell className="text-gray-100">$000,000.00</TableCell>
-                    <TableCell className="text-[#1DB954] text-gray-100">+0.00%</TableCell>
-                    <TableCell className="text-gray-100">00.00%</TableCell>
+                    <TableCell className="font-medium text-[#d0d0d0]">{asset}</TableCell>
+                    <TableCell className="text-[#d0d0d0]">$000,000.00</TableCell>
+                    <TableCell className="text-[#1DB954] text-[#d0d0d0]">+0.00%</TableCell>
+                    <TableCell className="text-[#d0d0d0]">00.00%</TableCell>
                     <TableCell>
                       <Button asChild variant="ghost" size="sm">
                         <Link href={`/asset/${asset}`}>
-                          <span className="text-gray-100">Details</span>
+                          <span className="text-[#d0d0d0]">Details</span>
                           <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
                       </Button>
@@ -129,7 +129,7 @@ export default function PortfolioOverviewPage() {
         <div className="text-center">
           <Button asChild size="lg">
             <Link href="/input">
-              <span className="text-gray-100">Update Portfolio</span>
+              <span className="text-[#d0d0d0]">Update Portfolio</span>
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>

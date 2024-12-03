@@ -1,3 +1,5 @@
+"use client"
+import { motion } from 'framer-motion'
 import { ArrowUpRight, TrendingUp, Briefcase, Landmark } from 'lucide-react'
 import Link from 'next/link'
 
@@ -7,11 +9,20 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 
 export default function MarketDataPage() {
   return (
-    <div className="min-h-screen bg-[#121212] text-white">
-      <main className="container mx-auto px-4 py-8 text-gray-100">
-        <h1 className="text-4xl font-bold mb-8 text-center text-gray-100">Market Data</h1>
+    <div className="min-h-screen bg-[#121212] text-[#d0d0d0]">
+      <main className="container mx-auto px-4 py-8 text-[#d0d0d0]">
+      <motion.h1 
+        className="text-4xl font-bold mb-8 text-center"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <h1 className="text-4xl font-bold mb-8 text-center text-[#d0d0d0]">Market Data</h1>
+        </motion.h1>
         
-        <section className="mb-12">
+        <motion.section initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 2 }} className="mb-12">
           <Card className="bg-[#1E1E1E] border-none">
             <CardHeader>
               <CardTitle className="flex items-center text-[#1DB954]">
@@ -35,7 +46,7 @@ export default function MarketDataPage() {
                     <TableRow key={symbol}>
                       <TableCell className="font-medium">{symbol}</TableCell>
                       <TableCell>Company Name</TableCell>
-                      <TableCell>$000.00</TableCell>
+                      <TableCell>Rs.000.00</TableCell>
                       <TableCell className="text-[#1DB954]">+0.00%</TableCell>
                       <TableCell>
                         <Button asChild variant="ghost" size="sm">
@@ -51,7 +62,7 @@ export default function MarketDataPage() {
               </Table>
             </CardContent>
           </Card>
-        </section>
+        </motion.section>
 
         <section className="mb-12">
           <Card className="bg-[#1E1E1E] border-none">
@@ -66,11 +77,11 @@ export default function MarketDataPage() {
                 {['VFIAX', 'FXAIX', 'SWPPX', 'VTSAX', 'SWTSX'].map((symbol) => (
                   <Card key={symbol} className="bg-[#2C2C2C] border-none">
                     <CardHeader>
-                      <CardTitle className="text-lg text-gray-100">{symbol}</CardTitle>
+                      <CardTitle className="text-lg text-[#d0d0d0]">{symbol}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-sm mb-2 text-gray-100">Fund Name</p>
-                      <p className="text-lg font-bold mb-2 text-gray-100">$000.00</p>
+                      <p className="text-sm mb-2 text-[#d0d0d0]">Fund Name</p>
+                      <p className="text-lg font-bold mb-2 text-[#d0d0d0]">Rs. 000.00</p>
                       <p className="text-sm text-[#1DB954]">+0.00%</p>
                       <Button asChild variant="ghost" size="sm" className="mt-4">
                         <Link href={`/asset/${symbol}`}>
@@ -107,9 +118,9 @@ export default function MarketDataPage() {
                 <TableBody>
                   {['10-Year Treasury', '30-Year Treasury', '5-Year Treasury', '2-Year Treasury', '3-Month Treasury'].map((bond) => (
                     <TableRow key={bond}>
-                      <TableCell className="font-medium text-gray-100">{bond}</TableCell>
-                      <TableCell className="text-gray-100">0.00%</TableCell>
-                      <TableCell className="text-gray-100">00/00/0000</TableCell>
+                      <TableCell className="font-medium text-[#d0d0d0]">{bond}</TableCell>
+                      <TableCell className="text-[#d0d0d0]">0.00%</TableCell>
+                      <TableCell className="text-[#d0d0d0]">00/00/0000</TableCell>
                       <TableCell>
                         <Button asChild variant="ghost" size="sm">
                           <Link href={`/asset/${bond.toLowerCase().replace(' ', '-')}`}>
