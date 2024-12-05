@@ -39,11 +39,12 @@ export default function RootLayout({
               <Link  className="text-[#d0d0d0]" href="/portfolio/1"><Briefcase className="mr-2 h-4 w-4" /> Personal Portfolio</Link>
             </Button>
             <Button asChild variant="outline" className="rounded-lg">
-              <Link className="text-[#d0d0d0]" href="/auth"><LogIn className="mr-2 h-4 w-4" /> Log In</Link>
+              <Link className="text-[#d0d0d0]" href="/auth"><LogIn className="mr-2 h-4 w-4" /> Log Out</Link>
             </Button>
-            <Button asChild>
-              <Link className="text-[#d0d0d0]" href="/yug"><UserPlus className="mr-2 h-4 w-4" /> Sign Up</Link>
-            </Button>
+            {/* <Button asChild>
+              <Link className="text-[#d0d0d0]" href="/yug"><UserPlus className="mr-2 h-4 w-4" /> Profile</Link>
+            </Button> */}
+            
           </div>
         </div>
       </nav>
